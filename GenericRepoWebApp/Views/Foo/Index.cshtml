@@ -1,0 +1,33 @@
+﻿@model IEnumerable<GenericRepoWebApp.Data.DataAccess.SqlServer.Foo>
+
+@{
+    ViewBag.Title = "Foo";
+}
+
+<h2>Foo</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            FooName
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FooName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FooId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FooId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FooId })
+        </td>
+    </tr>
+}
+
+</table>

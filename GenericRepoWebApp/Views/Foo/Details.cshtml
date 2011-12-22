@@ -1,0 +1,20 @@
+﻿@model GenericRepoWebApp.Data.DataAccess.SqlServer.Foo
+
+@{
+    ViewBag.Title = "FooSingle";
+}
+
+<h2>FooSingle</h2>
+
+<fieldset>
+    <legend>Foo</legend>
+
+    <div class="display-label">FooName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FooName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.FooId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

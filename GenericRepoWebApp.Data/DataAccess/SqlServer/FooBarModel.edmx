@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FooBarModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="FooBarModelStoreContainer">
+          <EntitySet Name="Bar" EntityType="FooBarModel.Store.Bar" store:Type="Tables" />
+          <EntitySet Name="Foo" EntityType="FooBarModel.Store.Foo" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="Bar">
+          <Key>
+            <PropertyRef Name="BarId" />
+          </Key>
+          <Property Name="BarId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BarName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Foo">
+          <Key>
+            <PropertyRef Name="FooId" />
+          </Key>
+          <Property Name="FooId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FooName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FooBarModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="FooBarEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bars" EntityType="FooBarModel.Bar" />
+          <EntitySet Name="Foos" EntityType="FooBarModel.Foo" />
+        </EntityContainer>
+        <EntityType Name="Bar">
+          <Key>
+            <PropertyRef Name="BarId" />
+          </Key>
+          <Property Name="BarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BarName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Foo">
+          <Key>
+            <PropertyRef Name="FooId" />
+          </Key>
+          <Property Name="FooId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FooName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FooBarModelStoreContainer" CdmEntityContainer="FooBarEntities1">
+          <EntitySetMapping Name="Bars"><EntityTypeMapping TypeName="FooBarModel.Bar"><MappingFragment StoreEntitySet="Bar">
+            <ScalarProperty Name="BarId" ColumnName="BarId" />
+            <ScalarProperty Name="BarName" ColumnName="BarName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Foos"><EntityTypeMapping TypeName="FooBarModel.Foo"><MappingFragment StoreEntitySet="Foo">
+            <ScalarProperty Name="FooId" ColumnName="FooId" />
+            <ScalarProperty Name="FooName" ColumnName="FooName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

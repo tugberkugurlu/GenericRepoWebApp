@@ -10,7 +10,7 @@ namespace GenericRepoWebApp.Data.DataAccess.Infrastructure {
         IGenericRepository<T> where T : class where C : DbContext, new() {
 
         private C _entities = new C();
-        public C Context {
+        protected C Context {
 
             get { return _entities; }
             set { _entities = value; }
@@ -47,5 +47,23 @@ namespace GenericRepoWebApp.Data.DataAccess.Infrastructure {
 
             _entities.SaveChanges();
         }
+
+        private bool disposed = false;
+
+        protected virtual void Dispose(bool disposing) {
+
+            if (!this.disposed)
+                if (disposing)
+                    _entities.Dispose();
+
+            this.disposed = true;
+        }
+
+        public void Dispose() {
+
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
     }
 }

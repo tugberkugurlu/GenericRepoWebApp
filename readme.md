@@ -3,7 +3,3 @@ Sample Application which contains Generic Repository Pattern, EF, ASP.NET MVC, D
 http://www.tugberkugurlu.com/archive/generic-repository-pattern-entity-framework-asp-net-mvc-and-unit-testing-triangle
 
 http://www.tugberkugurlu.com/archive/how-to-work-with-generic-repositories-on-asp-net-mvc-and-unit-testing-them-by-mocking
-
-it is a nice application...
-
-a developer can change this...

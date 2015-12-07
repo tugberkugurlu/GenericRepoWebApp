@@ -15,6 +15,11 @@ namespace GenericRepoWebApp.Data.DataAccess.Infrastructure {
             get { return _entities; }
             set { _entities = value; }
         }
+        
+        public virtual T Get(params object[] id)
+        {
+            return _entities.Set<T>().Find(id);
+        }
 
         public virtual IQueryable<T> GetAll() {
 

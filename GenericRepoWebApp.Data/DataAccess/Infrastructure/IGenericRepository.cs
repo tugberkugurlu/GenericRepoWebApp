@@ -7,7 +7,7 @@ using System.Text;
 namespace GenericRepoWebApp.Data.DataAccess.Infrastructure {
 
     public interface IGenericRepository<T> : IDisposable where T : class {
-
+        T Get(params object[] id);
         IQueryable<T> GetAll();
         IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);
         void Add(T entity);
